@@ -7,7 +7,7 @@ public class ArithmeticOperations extends Digits {
 
     public ArithmeticOperations() {
         super();
-        System.out.print("Choose Arithmetic operation:\n1) Plus (+) \n2) Minus (-)\n3) Multiply (*)\n4) Divide (/)");
+        System.out.println("Choose Arithmetic operation:\n1) Plus (+) \n2) Minus (-)\n3) Multiply (*)\n4) Divide (/)");
         operation = scanner.nextLine();
 
         switch (operation) {
@@ -15,24 +15,29 @@ public class ArithmeticOperations extends Digits {
             case "+":
             case "Plus":
             case "plus":
+                this.operation = "Summarizing";
                 plus();
                 break;
             case "2":
             case "-":
             case "Minus":
             case "minus":
+                this.operation = "Subtraction";
                 minus();
                 break;
             case "3":
             case "*":
             case "Multiply":
             case "multiply":
+                this.operation = "Multiplication";
                 multiply();
                 break;
             case "4":
             case "/":
             case "Divide":
             case "divide":
+                this.operation = "Division";
+
                 divide();
                 break;
             default:
@@ -44,14 +49,18 @@ public class ArithmeticOperations extends Digits {
     // Operations
     public void plus() {
         result = String.valueOf(firstDigit + secondDigit);
+        Result();
     }
 
     public void minus() {
         result = String.valueOf(firstDigit - secondDigit);
+        Result();
+
     }
 
     public void multiply() {
         result = String.valueOf(firstDigit * secondDigit);
+        Result();
     }
 
     public void divide() {
@@ -60,11 +69,11 @@ public class ArithmeticOperations extends Digits {
         } else {
             result = "Error: division by zero.";
         }
-
+        Result();
     }
-
-
     public void Result() {
         System.out.println("Result of " + operation + " of " + firstDigit + " and " + secondDigit + " is " + result +".");
     }
+
+
 }
